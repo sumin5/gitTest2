@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.com.mapper.Mapper">
+  	<insert id="insert" parameterType="com.com.domain.insertDTO">
+		insert into tt(user_id)
+		value(#{userId})
+	</insert>
+	<select id="view" parameterType="String" resultType="String">
+		select * from tt where user_id=#{userId}
+	</select>
+	
+	<!-- oracleinsert  -->
+	<insert id="oracleInsert" parameterType="com.com.domain.OracleInsertDTO">
+		insert into member
+		values(#{id},#{memberId},#{memberPassword},#{memberName},#{memberPhone},#{memberEmail},sysdate)
+	</insert>
+	
+	<!-- postgresInsert  -->
+	<insert id="postgresInsert" parameterType="com.com.domain.PostgreInsertDTO">
+		insert into test.user
+		values(#{userId},#{userName},#{userPassword},#{userAuthority})
+	</insert>
+	
+	<!-- insert -->
+	<select id="login" parameterType="com.com.domain.PostgreInsertDTO" resultType="com.com.domain.PostgreInsertDTO">
+		select * from test.user where user_id = #{userId} 
+	</select>
+	
+  </mapper>
+  

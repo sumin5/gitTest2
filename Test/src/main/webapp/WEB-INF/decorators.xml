@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 정의된 decorator 파일들이 있는 기본 디렉토리를 설정 -->
+<decorators defaultdir="/WEB-INF/views">
+  <!-- Any urls that are excluded will never be decorated by Sitemesh -->
+
+
+	<!-- controller를 호출하는 url 값이 정의된 패턴에 해당한다면 decorator를 사용하지 않음 -->
+	<excludes>
+      <pattern>/includeSample/*</pattern>
+    </excludes>   
+
+
+    <!-- admin -->
+    <!-- 패턴이 없는 decorator이다. -->
+    <decorator name="admin_top" page="layout/admin/top.jsp" />
+    <decorator name="admin_bottom" page="layout/admin/bottom.jsp"/>
+    <!-- controller를 호출하는 url 값이 정의된 패턴에 해당한다면 지정된 page의 레이아웃 형태를 사용 -->
+    <decorator name="admin_default" page="layout/admin/default.jsp" >
+        <pattern>/admin/**</pattern>
+    </decorator>
+
+    <!-- user 경로로 들어올때 -->
+    <decorator name="top" page="layout/front/top.jsp" >
+    </decorator>	
+    <decorator name="bottom" page="layout/front/bottom.jsp" >
+    </decorator>	
+    <decorator name="default" page="layout/front/default.jsp">
+        <pattern>/user/*</pattern>
+    </decorator>
+
+</decorators>
