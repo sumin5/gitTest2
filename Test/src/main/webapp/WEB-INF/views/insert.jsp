@@ -10,7 +10,7 @@
 <form action="insert" method="post">
 	<input type="text" name="userId">
 	<input type="submit" value="submit">
-	asdasd	asdsadasd12312312312asdasd123132132test333
+	asdasd	asdsadasd12312312312asdasd1231
 </form>
 
 
