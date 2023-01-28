@@ -12,4 +12,5 @@ public interface InsertDao {
 	public void oracleInsert(OracleInsertDTO dto)throws Exception;
 
 	public void postgresInsert(PostgreInsertDTO dto)throws Exception;
+	///Test2
 }
